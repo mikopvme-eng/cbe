@@ -262,21 +262,11 @@ export default function AmountScreen({
 
                   {/* PIN Display Field */}
                   <div
-                    className={`flex items-center bg-white rounded-2xl border-2 px-4 py-2 gap-4 ${pinError ? "border-red-400" : "border-[#7B287A]"
+                    className={`flex items-center bg-white rounded-2xl border-2 px-4 py-3 gap-3 ${pinError ? "border-red-400" : "border-[#7B287A]"
                       } ${shake ? "tx-shake" : ""}`}
                   >
-                    <Lock className="w-5 h-5 text-[#7B287A] flex-shrink-0" />
-                    <div className="flex items-center flex-1 h-10 gap-3">
-                      {Array.from({ length: MAX_TX_PIN }).map((_, i) => (
-                        <div
-                          key={i}
-                          className={`w-3 h-3 rounded-full border-2 transition-all duration-150 ${i < pinInput.length
-                              ? "bg-[#7B287A] border-[#7B287A] scale-110"
-                              : "bg-transparent border-gray-300"
-                            }`}
-                        />
-                      ))}
-                    </div>
+                    <Lock className="w-3 h-3 text-[#7B287A] flex-shrink-0" />
+                    <span className="text-gray-400 text-sm font-medium">Enter your PIN</span>
                   </div>
 
                   {/* Error */}
