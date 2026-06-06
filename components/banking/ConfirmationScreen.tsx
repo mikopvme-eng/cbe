@@ -68,7 +68,7 @@ export default function ConfirmationScreen({
   const qrPayload = `${origin}/receipt?d=${encoded}`
 
   return (
-    <div className="min-h-screen bg-[#7B287A] flex flex-col font-sans max-w-md mx-auto shadow-md overflow-x-hidden relative">
+    <div className="h-screen bg-[#7B287A] flex flex-col font-sans max-w-md mx-auto shadow-md overflow-hidden relative">
 
       {/* ── 1. Purple Header ─────────────────────────────────────── */}
       <div className="bg-[#7B287A] px-5 pt-10 pb-20 flex items-center justify-between relative">

@@ -154,7 +154,7 @@ export default function LoginScreen({ pin, setPin, onSubmit }: LoginScreenProps)
           <div className="flex justify-center mb-1">
             <button
               onClick={() => setShowKeyboard(false)}
-              className="text-gray-400 p-1 hover:text-gray-600 transition-colors"
+              className="text-gray-400 p-1 hover:text-gray-600 "
             >
               <ChevronDown className="w-5 h-5" />
             </button>
@@ -169,7 +169,7 @@ export default function LoginScreen({ pin, setPin, onSubmit }: LoginScreenProps)
                     key={key}
                     onMouseDown={(e) => e.preventDefault()} // prevent input blur
                     onClick={() => handleKey(key)}
-                    className="flex items-center justify-center rounded-2xl py-4 text-xl font-bold shadow-[0_1px_3px_rgba(0,0,0,0.05)] active:scale-95 transition-all select-none bg-[#E8E8E6] text-gray-800 hover:bg-[#dbdbd8]"
+                    className="flex items-center justify-center rounded-2xl py-4 text-xl font-bold shadow-[0_1px_3px_rgba(0,0,0,0.05)] active:scale-95 active:bg-[#e1e1de] transition-all select-none bg-[#E8E8E6] text-gray-800 hover:bg-[#dbdbd8]"
                   >
                     {key === "backspace" ? (
                       <svg width="26" height="22" viewBox="0 0 26 22" fill="none" className="transition-transform active:scale-90">

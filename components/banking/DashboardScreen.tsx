@@ -124,9 +124,9 @@ export default function DashboardScreen({
       {/* 1. Header */}
       <div className="bg-[#7B287A] text-white rounded-b-[2.5rem] pb-24 pt-4 px-6 relative shadow-md">
         <div className="flex items-center justify-between mb-6">
-          <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
-            <Image src="/CLOGO.png" alt="CBE Logo" width={32} height={32} className="object-contain" />
-          </div>
+          <button className="p-1 hover:opacity-80">
+            <LayoutGrid className="w-6 h-6 text-white" />
+          </button>
           <div className="flex items-center gap-4">
             <button className="flex items-center gap-1 bg-white/20 border border-white/30 rounded-full px-3 py-1 text-xs font-semibold hover:bg-white/35 transition-colors">
               <Globe className="w-3.5 h-3.5" /><span>EN</span>
