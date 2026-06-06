@@ -142,7 +142,7 @@ export default function DashboardScreen({
       </div>
 
       {/* 2. Overlapping Content */}
-      <div className="px-5 -mt-20 flex flex-col gap-5 z-10">
+      <div className="px-5 -mt-20 flex flex-col gap-5 z-10 overflow-y-auto pb-8">
 
         {/* Balance Card */}
         <div className="bg-[#121212] rounded-[2rem] p-6 text-white shadow-xl relative overflow-hidden flex flex-col gap-4 border border-zinc-800/80">

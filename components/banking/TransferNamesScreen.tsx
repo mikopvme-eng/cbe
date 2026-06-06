@@ -59,8 +59,8 @@ export default function TransferNamesScreen({
         <h1 className="text-white text-xl font-bold tracking-wide">CBE Transfer</h1>
       </div>
 
-      {/* Scrollable body */}
-      <div className="flex-1 overflow-y-auto px-5 py-5 flex flex-col gap-4 pb-10">
+      {/* Body */}
+      <div className="flex-1 px-5 py-5 flex flex-col gap-4 pb-10">
 
         {/* From Account Card — dark */}
         <div className="bg-[#1E1E2E] rounded-2xl px-5 py-4 flex flex-col gap-2 shadow-lg">
