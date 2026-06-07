@@ -122,29 +122,29 @@ export default function DashboardScreen({
       )}
 
       {/* 1. Header */}
-      <div className="bg-[#7B287A] text-white rounded-b-[2.5rem] pb-16 pt-4 px-6 relative shadow-md">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
+      <div className="bg-[#7B287A] text-white rounded-b-[2.5rem] pb-28 pt-4 px-6 relative shadow-md">
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-4">
             <button className="p-1 hover:opacity-80">
-              <LayoutGrid className="w-5 h-5 text-white" />
+              <LayoutGrid className="w-6 h-6 text-white" />
             </button>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-col">
               <p className="text-white/80 text-xs font-light leading-tight">Hello,</p>
-              <h2 className="text-white text-sm font-bold tracking-wide">{firstName}</h2>
+              <h2 className="text-white text-lg font-bold tracking-wide">{firstName}</h2>
             </div>
           </div>
-          <div className="flex items-center gap-3">
-            <button className="flex items-center gap-1 bg-white/20 border border-white/30 rounded-full px-2 py-1 text-[10px] font-semibold hover:bg-white/35 transition-colors">
-              <Globe className="w-3 h-3" /><span>EN</span>
+          <div className="flex items-center gap-4">
+            <button className="flex items-center gap-1 bg-white/20 border border-white/30 rounded-full px-3 py-1 text-xs font-semibold hover:bg-white/35 transition-colors">
+              <Globe className="w-3.5 h-3.5" /><span>EN</span>
             </button>
-            <button className="p-1 hover:opacity-80"><Search className="w-4 h-4 text-white" /></button>
-            <button className="p-1 hover:opacity-80"><RefreshCw className="w-4 h-4 text-white" /></button>
+            <button className="p-1 hover:opacity-80"><Search className="w-5 h-5 text-white" /></button>
+            <button className="p-1 hover:opacity-80"><RefreshCw className="w-5 h-5 text-white" /></button>
           </div>
         </div>
       </div>
 
       {/* 2. Overlapping Content */}
-      <div className="px-5 -mt-12 flex flex-col gap-5 z-10 overflow-y-auto pb-8">
+      <div className="px-5 -mt-20 flex flex-col gap-5 z-10 overflow-y-auto pb-8">
 
         {/* Balance Card */}
         <div className="bg-[#121212] rounded-[2rem] p-6 text-white shadow-xl relative overflow-hidden flex flex-col gap-4 border border-zinc-800/80">

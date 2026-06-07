@@ -71,7 +71,7 @@ export default function ConfirmationScreen({
     <div className="h-screen bg-[#7B287A] flex flex-col font-sans max-w-md mx-auto shadow-md overflow-hidden relative">
 
       {/* ── 1. Purple Header ─────────────────────────────────────── */}
-      <div className="bg-[#7B287A] px-5 pt-8 pb-16 flex items-center justify-between relative flex-shrink-0">
+      <div className="bg-[#7B287A] px-5 pt-10 pb-20 flex items-center justify-between relative flex-shrink-0">
 
         {/* Left: Shield icon + Thank you / Success */}
         <div className="flex items-center gap-3">
@@ -118,20 +118,20 @@ export default function ConfirmationScreen({
       </div>
 
       {/* ── 2. White body — rounded top, padding clears the overlapping circle ─ */}
-      <div className="flex-1 bg-white rounded-t-[2.5rem] px-5 pt-10 pb-4 flex flex-col gap-4 overflow-hidden">
+      <div className="flex-1 bg-white rounded-t-[2.5rem] px-5 pt-12 pb-6 flex flex-col gap-5 overflow-hidden">
 
         {/* Subtitle */}
-        <p className="text-gray-700 text-sm font-medium text-center -mt-1">
+        <p className="text-gray-700 text-base font-medium text-center -mt-1">
           Transaction Completed Successfully!
         </p>
 
         {/* ── 3. Transaction Summary Card ─────────────────────────── */}
-        <div className="bg-[#F0F0F0] rounded-2xl p-4 flex flex-col gap-3 flex-1 overflow-hidden">
+        <div className="bg-[#F0F0F0] rounded-2xl p-5 flex flex-col gap-4">
 
           <p className="text-gray-400 text-xs font-medium">Transaction Summary</p>
 
           {/* Transaction message body */}
-          <p className="text-gray-900 text-xs leading-5 overflow-auto">
+          <p className="text-gray-900 text-sm leading-6">
             ETB{" "}
             <span className="font-extrabold">{amountNumber.toFixed(1)}</span>{" "}
             has been debited from{" "}
@@ -146,10 +146,10 @@ export default function ConfirmationScreen({
           </p>
 
           {/* QR Code — dynamically generated from transaction data */}
-          <div className="flex justify-center py-1">
+          <div className="flex justify-center py-2">
             <QRCodeSVG
               value={qrPayload}
-              size={140}
+              size={185}
               bgColor="#F0F0F0"
               fgColor="#1a1a1a"
               level="M"
@@ -158,19 +158,19 @@ export default function ConfirmationScreen({
           </div>
 
           {/* CBE branding row */}
-          <div className="flex items-center gap-2 pt-2 border-t border-gray-200">
+          <div className="flex items-center gap-3 pt-3 border-t border-gray-200">
             <Image
               src="/CLOGO.png"
               alt="CBE Logo"
-              width={32}
-              height={32}
+              width={42}
+              height={42}
               className="rounded-full flex-shrink-0"
             />
             <div>
-              <p className="text-gray-900 text-xs font-extrabold leading-tight">
+              <p className="text-gray-900 text-sm font-extrabold leading-tight">
                 Commercial Bank of Ethiopia
               </p>
-              <p className="text-gray-400 text-[10px] mt-0.5">
+              <p className="text-gray-400 text-xs mt-0.5">
                 The bank you can always rely on!
               </p>
             </div>
@@ -178,7 +178,7 @@ export default function ConfirmationScreen({
         </div>
 
         {/* ── 4. Three action icon buttons ── */}
-        <div className="flex items-center justify-around pt-1 flex-shrink-0">
+        <div className="flex items-center justify-around pt-1">
 
           {/* Receipt */}
           <button
