@@ -54,6 +54,15 @@ export default function DashboardScreen({
   const [copied, setCopied] = useState(false)
   const [activeTab, setActiveTab] = useState<TabId | null>(null)
   const [loadingTab, setLoadingTab] = useState(false)
+  const [currentTime, setCurrentTime] = useState(new Date())
+
+  // Update time every second
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date())
+    }, 1000)
+    return () => clearInterval(timer)
+  }, [])
 
   const firstNameRaw = savedSenderName ? savedSenderName.split(" ")[0] : "Solomon"
   const firstName = firstNameRaw.charAt(0).toUpperCase() + firstNameRaw.slice(1).toLowerCase()
@@ -122,7 +131,7 @@ export default function DashboardScreen({
       )}
 
       {/* 1. Header */}
-      <div className="bg-[#7b1fa2] text-white rounded-b-[2.5rem] pb-28 pt-4 px-6 relative shadow-md">
+      <div className="bg-[#7b1fa2] text-white rounded-b-[2.5rem] pb-20 pt-4 px-6 relative shadow-md">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-4">
             <button className="p-1 hover:opacity-80">
@@ -147,9 +156,9 @@ export default function DashboardScreen({
       <div className="px-5 -mt-20 flex flex-col gap-5 z-10 overflow-y-auto pb-8">
 
         {/* Balance Card */}
-        <div className="bg-[#121212] rounded-[2rem] p-6 text-white shadow-xl relative overflow-hidden flex flex-col gap-4 border border-zinc-800/80">
+        <div className="bg-[#19181e] rounded-[2rem] p-6 text-white shadow-xl relative overflow-hidden flex flex-col gap-4 border border-zinc-800/80">
           {/* Map of the world background */}
-          <div className="absolute inset-0 opacity-10 pointer-events-none mix-blend-screen"
+          <div className="absolute inset-0 pointer-events-none"
             style={{ backgroundImage: "url(/worldcbe.jpg)", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }} />
 
           {/* Header Row (Left Aligned) */}
@@ -184,7 +193,7 @@ export default function DashboardScreen({
 
           {/* Centered Date & Time */}
           <div className="text-gray-500 text-[10px] text-center relative z-10">
-            {formattedDate} • 10:54 PM
+            {formattedDate} • {currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
           </div>
         </div>
 
