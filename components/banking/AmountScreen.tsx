@@ -88,7 +88,7 @@ export default function AmountScreen({
   ]
 
   return (
-    <div className="min-h-screen bg-[#F0EBF2] flex flex-col font-sans max-w-md mx-auto shadow-md relative">
+    <div className="h-screen bg-[#F0EBF2] flex flex-col font-sans max-w-md mx-auto shadow-md relative overflow-hidden">
       <style>{`
         @keyframes shake {
           0%,100% { transform:translateX(0); }
@@ -266,7 +266,16 @@ export default function AmountScreen({
                       } ${shake ? "tx-shake" : ""}`}
                   >
                     <Lock className="w-3 h-3 text-[#7B287A] flex-shrink-0" />
-                    <span className="text-gray-400 text-sm font-medium">Enter your PIN</span>
+                    <div className="flex items-center flex-1 h-6 gap-1 px-2">
+                      {pinInput.length === 0 ? (
+                        <span className="text-gray-400 text-sm font-medium">Enter your PIN</span>
+                      ) : (
+                        <span className="text-gray-800 text-2xl leading-none mt-1 tracking-widest">
+                          {"•".repeat(pinInput.length)}
+                        </span>
+                      )}
+                      <span className="w-[1.5px] h-5 bg-[#7B287A] animate-pulse opacity-70" />
+                    </div>
                   </div>
 
                   {/* Error */}

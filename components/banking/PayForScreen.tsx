@@ -35,7 +35,7 @@ export default function PayForScreen({
   }
 
   return (
-    <div className="min-h-screen bg-[#F5F5F3] flex flex-col font-sans max-w-md mx-auto shadow-md">
+    <div className="h-screen bg-[#F5F5F3] flex flex-col font-sans max-w-md mx-auto shadow-md overflow-hidden">
       {/* Header */}
       <div className="bg-[#7B287A] text-white px-5 py-4 flex items-center gap-4 shadow-sm relative z-10">
         <button onClick={onBack} className="p-1.5 hover:bg-white/10 rounded-full transition-colors">

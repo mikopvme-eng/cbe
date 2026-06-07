@@ -56,7 +56,7 @@ export default function LoginScreen({ pin, setPin, onSubmit }: LoginScreenProps)
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-tr from-[#F2F2EF] via-[#F6F6F4] to-[#FAF5FC] flex flex-col font-sans max-w-md mx-auto shadow-md relative overflow-hidden">
+    <div className="h-screen bg-gradient-to-tr from-[#F2F2EF] via-[#F6F6F4] to-[#FAF5FC] flex flex-col font-sans max-w-md mx-auto shadow-md relative overflow-hidden">
       
       {/* Premium Background Orbs for Mesh Gradient Effect */}
       <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] rounded-full bg-[#7B287A]/5 blur-[80px] pointer-events-none" />

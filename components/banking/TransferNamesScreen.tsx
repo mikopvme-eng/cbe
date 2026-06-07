@@ -1,7 +1,7 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react"
-import { ArrowLeft, CreditCard, QrCode, Banknote, Plus, Trash2, ChevronRight, Landmark, EyeOff, Check, ChevronDown } from "lucide-react"
+import { useState } from "react"
+import { ArrowLeft, CreditCard, QrCode, Banknote, Plus, Trash2, ChevronRight, Landmark, EyeOff } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
@@ -44,44 +44,9 @@ export default function TransferNamesScreen({
   onSubmit,
 }: TransferNamesScreenProps) {
   const [showRemark, setShowRemark] = useState(false)
-  const [showKeyboard, setShowKeyboard] = useState(false)
-  const [activeField, setActiveField] = useState<"account" | "amount" | null>(null)
-  const prevAccountRef = useRef(accountNumber)
-  const prevAmountRef = useRef(amount)
-
-  const rows = [
-    ["1", "2", "3"],
-    ["4", "5", "6"],
-    ["7", "8", "9"],
-    ["backspace", "0", "submit"],
-  ]
-
-  const handleKey = (key: string) => {
-    if (key === "backspace") {
-      if (activeField === "account") {
-        setAccountNumber((prev: string) => prev.slice(0, -1))
-      } else if (activeField === "amount") {
-        setAmount((prev: string) => prev.slice(0, -1))
-      }
-    } else if (key === "submit") {
-      setShowKeyboard(false)
-      setActiveField(null)
-      if (accountNumber && amount) {
-        onSubmit()
-      }
-    } else {
-      if (activeField === "account") {
-        if (accountNumber.length < 13) {
-          setAccountNumber((prev: string) => prev + key)
-        }
-      } else if (activeField === "amount") {
-        setAmount((prev: string) => prev + key)
-      }
-    }
-  }
 
   return (
-    <div className="min-h-screen bg-[#F0EBF2] flex flex-col font-sans max-w-md mx-auto shadow-md">
+    <div className="h-screen bg-[#F0EBF2] flex flex-col font-sans max-w-md mx-auto shadow-md overflow-hidden">
 
       {/* Header — solid purple, back arrow + title */}
       <div className="bg-[#7B287A] px-5 py-4 flex items-center gap-4 shadow-md">
@@ -113,17 +78,14 @@ export default function TransferNamesScreen({
         </div>
 
         {/* Account Number Field */}
-        <div
-          onClick={() => { setActiveField("account"); setShowKeyboard(true) }}
-          className="bg-white rounded-2xl flex items-center px-4 py-1 gap-3 border border-gray-100 shadow-sm focus-within:border-[#7B287A] transition-colors cursor-pointer"
-        >
+        <div className="bg-white rounded-2xl flex items-center px-4 py-1 gap-3 border border-gray-100 shadow-sm focus-within:border-[#7B287A] transition-colors">
           <CreditCard className="w-5 h-5 text-gray-400 flex-shrink-0" />
           <Input
             type="text"
             placeholder="Account Number*"
             value={accountNumber}
-            readOnly
-            className="flex-1 border-0 bg-transparent text-gray-800 placeholder-gray-400 text-sm focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 py-4 px-0 cursor-pointer"
+            onChange={(e) => setAccountNumber(e.target.value)}
+            className="flex-1 border-0 bg-transparent text-gray-800 placeholder-gray-400 text-sm focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 py-4 px-0"
           />
           <button className="text-gray-400 hover:text-[#7B287A] transition-colors">
             <QrCode className="w-5 h-5" />
@@ -131,17 +93,14 @@ export default function TransferNamesScreen({
         </div>
 
         {/* Amount Field */}
-        <div
-          onClick={() => { setActiveField("amount"); setShowKeyboard(true) }}
-          className="bg-white rounded-2xl flex items-center px-4 py-1 gap-3 border border-gray-100 shadow-sm focus-within:border-[#7B287A] transition-colors cursor-pointer"
-        >
+        <div className="bg-white rounded-2xl flex items-center px-4 py-1 gap-3 border border-gray-100 shadow-sm focus-within:border-[#7B287A] transition-colors">
           <Banknote className="w-5 h-5 text-gray-400 flex-shrink-0" />
           <Input
-            type="text"
+            type="number"
             placeholder="Amount*"
             value={amount}
-            readOnly
-            className="flex-1 border-0 bg-transparent text-gray-800 placeholder-gray-400 text-sm focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 py-4 px-0 cursor-pointer"
+            onChange={(e) => setAmount(e.target.value)}
+            className="flex-1 border-0 bg-transparent text-gray-800 placeholder-gray-400 text-sm focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 py-4 px-0"
           />
         </div>
 
@@ -232,52 +191,6 @@ export default function TransferNamesScreen({
         </div>
 
       </div>
-
-      {/* Custom Keyboard */}
-      {showKeyboard && (
-        <div className="bg-[#EFEFED]/95 backdrop-blur-md border-t border-gray-200/60 px-4 pb-8 pt-1 relative z-20">
-          {/* Dismiss chevron */}
-          <div className="flex justify-center mb-1">
-            <button
-              onClick={() => setShowKeyboard(false)}
-              className="text-gray-400 p-1 hover:text-gray-600"
-            >
-              <ChevronDown className="w-5 h-5" />
-            </button>
-          </div>
-
-          {/* Keys */}
-          <div className="flex flex-col gap-2">
-            {rows.map((row, ri) => (
-              <div key={ri} className="grid grid-cols-3 gap-2">
-                {row.map((key) => (
-                  <button
-                    key={key}
-                    onMouseDown={(e) => e.preventDefault()}
-                    onClick={() => handleKey(key)}
-                    className="flex items-center justify-center rounded-2xl py-4 text-xl font-bold shadow-[0_1px_3px_rgba(0,0,0,0.05)] active:scale-95 transition-all select-none bg-[#E8E8E6] text-gray-800 hover:bg-[#dbdbd8]"
-                  >
-                    {key === "backspace" ? (
-                      <svg width="26" height="22" viewBox="0 0 26 22" fill="none" className="transition-transform active:scale-90">
-                        <path
-                          d="M10 1H23C24.1 1 25 1.9 25 3V19C25 20.1 24.1 21 23 21H10L1 11L10 1Z"
-                          stroke="#7B287A" strokeWidth="1.8" fill="none"
-                        />
-                        <line x1="13" y1="7.5" x2="19" y2="14.5" stroke="#7B287A" strokeWidth="1.8" strokeLinecap="round" />
-                        <line x1="19" y1="7.5" x2="13" y2="14.5" stroke="#7B287A" strokeWidth="1.8" strokeLinecap="round" />
-                      </svg>
-                    ) : key === "submit" ? (
-                      <Check className="w-6 h-6 text-[#7B287A] transition-transform active:scale-90" strokeWidth={3} />
-                    ) : (
-                      <span className="text-gray-800">{key}</span>
-                    )}
-                  </button>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
     </div>
   )
 }
