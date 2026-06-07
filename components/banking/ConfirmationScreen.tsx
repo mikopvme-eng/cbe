@@ -145,7 +145,7 @@ export default function ConfirmationScreen({
           <div className="flex justify-center py-2">
             <QRCodeSVG
               value={qrPayload}
-              size={185}
+              size={150}
               bgColor="#F0F0F0"
               fgColor="#1a1a1a"
               level="M"

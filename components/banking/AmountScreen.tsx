@@ -115,8 +115,8 @@ export default function AmountScreen({
       <div className="flex-1 px-5 py-5 flex flex-col gap-4">
 
         {/* Transfer To */}
-        <div className="bg-[#7b1fa2] rounded-2xl px-5 py-4 flex flex-col gap-1 shadow-md">
-          <p className="text-[#AC7537] text-sm font-bold">Transfer to</p>
+        <div className="bg-[#7b1fa2] rounded-2xl px-5 py-3 flex flex-col gap-1 shadow-md">
+          <p className="text-[#e2d09e] text-sm font-bold">Transfer to</p>
           <div className="flex justify-between items-center text-white text-sm mt-1">
             <span className="text-gray-300">Account holder</span>
             <span className="font-semibold text-right">{displayReceiver}</span>
@@ -128,9 +128,9 @@ export default function AmountScreen({
         </div>
 
         {/* From Account */}
-        <div className="bg-[#1E1E2E] rounded-2xl px-5 py-4 flex flex-col gap-2 shadow-lg">
-          <p className="text-[#AC7537] text-xs font-semibold tracking-wider uppercase">From Account</p>
-          <p className="text-[#AC7537] text-base font-bold">Saving Account - 1********2766</p>
+        <div className="bg-[#1E1E2E] rounded-2xl px-5 py-3 flex flex-col gap-2 shadow-lg">
+          <p className="text-[#e2d09e] text-xs font-semibold tracking-wider uppercase">From Account</p>
+          <p className="text-[#e2d09e] text-base font-bold">Saving Account - 1********2766</p>
           <div className="flex items-center gap-2 mt-1">
             <div className="flex gap-1">
               {[...Array(6)].map((_, i) => (

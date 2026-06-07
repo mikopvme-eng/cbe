@@ -63,9 +63,9 @@ export default function TransferNamesScreen({
       <div className="flex-1 px-5 py-5 flex flex-col gap-4 pb-10">
 
         {/* From Account Card — dark */}
-        <div className="bg-[#1E1E2E] rounded-2xl px-5 py-4 flex flex-col gap-2 shadow-lg">
-          <p className="text-[#AC7537] text-xs font-semibold tracking-wider uppercase">From Account</p>
-          <p className="text-[#AC7537] text-base font-bold">Saving Account - 1********2766</p>
+        <div className="bg-[#1E1E2E] rounded-2xl px-5 py-3 flex flex-col gap-2 shadow-lg">
+          <p className="text-[#e2d09e] text-xs font-semibold tracking-wider uppercase">From Account</p>
+          <p className="text-[#e2d09e] text-base font-bold">Saving Account - 1********2766</p>
           <div className="flex items-center gap-2 mt-1">
             {/* Masked PIN dots */}
             <div className="flex gap-1">

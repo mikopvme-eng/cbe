@@ -149,7 +149,7 @@ export default function DashboardScreen({
         {/* Balance Card */}
         <div className="bg-[#121212] rounded-[2rem] p-6 text-white shadow-xl relative overflow-hidden flex flex-col gap-4 border border-zinc-800/80">
           {/* Map of the world background */}
-          <div className="absolute inset-0 opacity-15 pointer-events-none mix-blend-screen"
+          <div className="absolute inset-0 opacity-10 pointer-events-none mix-blend-screen"
             style={{ backgroundImage: "url(/worldcbe.jpg)", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }} />
 
           {/* Header Row (Left Aligned) */}
@@ -158,8 +158,8 @@ export default function DashboardScreen({
               <Image src="/CLOGO.png" alt="CBE Logo" width={32} height={32} className="object-contain" />
             </div>
             <div>
-              <h3 className="text-[#AC7537] text-sm font-bold">Commercial Bank of Ethiopia</h3>
-              <p className="text-yellow-500/80 text-[10px] tracking-wide">The bank you can always rely on!</p>
+              <h3 className="text-[#e2d09e] text-sm font-bold">Commercial Bank of Ethiopia</h3>
+              <p className="text-[#e2d09e] text-[10px] tracking-wide">The bank you can always rely on!</p>
             </div>
           </div>
 
@@ -173,10 +173,11 @@ export default function DashboardScreen({
             </button>
           </div>
 
+
           {/* Centered Saving Account & Copy Row */}
           <div className="flex items-center justify-center gap-2 relative z-10 text-xs border-t border-zinc-800/50 pt-3">
-            <span className="text-[#AC7537] font-semibold text-sm">Saving Account 1********2766</span>
-            <button onClick={handleCopyAccount} className="text-[#AC7537] hover:opacity-85 flex items-center">
+            <span className="text-[#e2d09e] font-semibold text-sm">Saving Account 1********2766</span>
+            <button onClick={handleCopyAccount} className="text-[#e2d09e] hover:opacity-85 flex items-center">
               {copied ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
             </button>
           </div>
