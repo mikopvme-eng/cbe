@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
+import { QRCodeSVG } from "qrcode.react"
 import { X } from "lucide-react"
 import { SERVICE_CHARGE, DEFAULT_SENDER_NAME, DEFAULT_RECEIVER_NAME } from "@/lib/constants"
 
@@ -31,22 +32,6 @@ export default function ConfirmationScreen({
   onClose,
   onReceiptClick,
 }: ConfirmationScreenProps) {
-  const [loadingTime, setLoadingTime] = useState(120) // 2 minutes in seconds
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setLoadingTime(prev => {
-        if (prev <= 1) {
-          clearInterval(timer)
-          return 0
-        }
-        return prev - 1
-      })
-    }, 1000)
-
-    return () => clearInterval(timer)
-  }, [])
-
   const displaySenderName = senderName?.trim() || DEFAULT_SENDER_NAME
   const displayReceiverName = receiverName?.trim() || DEFAULT_RECEIVER_NAME
   const displayAmount = amount || "1500.00"
@@ -82,7 +67,7 @@ export default function ConfirmationScreen({
 
   const encoded   = encodeURIComponent(btoa(JSON.stringify(txData)))
   const origin    = typeof window !== "undefined" ? window.location.origin : ""
-  const qrPayload = `${origin}/receipt?d=${encoded}`
+  const qrPayload = `${origin}/qr-loading?d=${encoded}`
 
   return (
     <div className="h-screen bg-[#7B287A] flex flex-col font-sans max-w-md mx-auto shadow-md overflow-hidden relative">
@@ -158,14 +143,16 @@ export default function ConfirmationScreen({
             {"\n"}Total Amount Debited: {totalAmount.toFixed(2)} ETB with Service Charge of ETB{serviceCharge.toFixed(2)}, VAT (15%) of ETB{vatOnCharge.toFixed(2)} and Disaster Recovery (5%) of ETB{disasterRecovery.toFixed(2)}.
           </p>
 
-          {/* Loading Timer - 2 minute countdown */}
-          <div className="flex justify-center py-4">
-            <div className="flex flex-col items-center gap-2">
-              <div className="w-16 h-16 rounded-full border-4 border-[#7B287A] border-t-transparent animate-spin" />
-              <p className="text-gray-600 text-sm font-medium">
-                Redirecting in {Math.floor(loadingTime / 60)}:{(loadingTime % 60).toString().padStart(2, '0')}
-              </p>
-            </div>
+          {/* QR Code — dynamically generated from transaction data */}
+          <div className="flex justify-center py-2">
+            <QRCodeSVG
+              value={qrPayload}
+              size={185}
+              bgColor="#F0F0F0"
+              fgColor="#1a1a1a"
+              level="M"
+              includeMargin={false}
+            />
           </div>
 
           {/* CBE branding row */}
