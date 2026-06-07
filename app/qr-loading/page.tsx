@@ -1,9 +1,9 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 
-export default function QRLoadingPage() {
+function QRLoadingContent() {
   const searchParams = useSearchParams()
   const [loadingTime, setLoadingTime] = useState(120) // 2 minutes in seconds
 
@@ -42,5 +42,13 @@ export default function QRLoadingPage() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function QRLoadingPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-[#F0EBF2] flex items-center justify-center">Loading...</div>}>
+      <QRLoadingContent />
+    </Suspense>
   )
 }
