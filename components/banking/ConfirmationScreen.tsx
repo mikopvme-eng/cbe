@@ -116,7 +116,7 @@ export default function ConfirmationScreen({
       </div>
 
       {/* ── 2. White body — rounded top, padding clears the overlapping circle ─ */}
-      <div className="flex-1 bg-white rounded-t-[2.5rem] px-5 pt-12 pb-6 flex flex-col gap-5 overflow-hidden">
+      <div className="flex-1 bg-white rounded-t-[2.5rem] px-5 pt-12 pb-6 flex flex-col gap-5 overflow-y-auto">
 
         {/* Subtitle */}
         <p className="text-gray-700 text-sm font-medium text-center -mt-1">
