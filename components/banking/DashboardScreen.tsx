@@ -122,7 +122,7 @@ export default function DashboardScreen({
       )}
 
       {/* 1. Header */}
-      <div className="bg-[#7B287A] text-white rounded-b-[2.5rem] pb-28 pt-4 px-6 relative shadow-md">
+      <div className="bg-[#7b1fa2] text-white rounded-b-[2.5rem] pb-28 pt-4 px-6 relative shadow-md">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-4">
             <button className="p-1 hover:opacity-80">
@@ -198,7 +198,7 @@ export default function DashboardScreen({
               { icon: <FileCheck className="w-6 h-6" />, label: "Receipt" },
             ].map(({ icon, label }) => (
               <div key={label} onClick={triggerLoader} className="flex flex-col items-center gap-1.5 group cursor-pointer">
-                <div className="w-14 h-14 bg-[#F3EBF4] border border-[#7B287A]/20 rounded-2xl flex items-center justify-center text-[#7B287A] shadow-sm group-hover:bg-[#ebdeed] transition-colors">
+                <div className="w-14 h-14 bg-[#F3EBF4] border border-[#7b1fa2]/20 rounded-2xl flex items-center justify-center text-[#7b1fa2] shadow-sm group-hover:bg-[#ebdeed] transition-colors">
                   {icon}
                 </div>
                 <span className="text-gray-500 text-xs font-semibold">{label}</span>
@@ -209,14 +209,14 @@ export default function DashboardScreen({
 
         {/* 4. Transfer & Receive Bar */}
         <div className="bg-white rounded-3xl shadow-[0_4px_15px_rgba(0,0,0,0.04)] py-4 px-2 flex items-center justify-around border border-gray-100">
-          <button onClick={onTransferClick} className="flex-1 flex items-center justify-center gap-2.5 py-1 text-[#7B287A] font-bold text-sm hover:opacity-85">
+          <button onClick={onTransferClick} className="flex-1 flex items-center justify-center gap-2.5 py-1 text-[#7b1fa2] font-bold text-sm hover:opacity-85">
             <div className="w-7 h-7 rounded-full bg-red-100 flex items-center justify-center text-red-600">
               <ArrowUpRight className="w-4 h-4" />
             </div>
             <span>CBE Transfer</span>
           </button>
           <div className="w-[1px] h-6 bg-gray-200" />
-          <button onClick={triggerLoader} className="flex-1 flex items-center justify-center gap-2.5 py-1 text-[#7B287A] font-bold text-sm hover:opacity-85">
+          <button onClick={triggerLoader} className="flex-1 flex items-center justify-center gap-2.5 py-1 text-[#7b1fa2] font-bold text-sm hover:opacity-85">
             <div className="w-7 h-7 rounded-full bg-green-100 flex items-center justify-center text-green-600">
               <ArrowDownLeft className="w-4 h-4" />
             </div>
@@ -234,7 +234,7 @@ export default function DashboardScreen({
             { icon: <Building2 className="w-6 h-6" />, label: "Government" },
           ].map(({ icon, label }) => (
             <div key={label} onClick={triggerLoader} className="bg-white rounded-2xl p-4 flex flex-col gap-3 shadow-sm border border-gray-50 hover:shadow-md transition-shadow cursor-pointer">
-              <div className="text-[#7B287A]">{icon}</div>
+              <div className="text-[#7b1fa2]">{icon}</div>
               <span className="text-gray-800 text-sm font-bold">{label}</span>
             </div>
           ))}
@@ -250,11 +250,11 @@ export default function DashboardScreen({
                   key={tab.id}
                   onClick={() => handleTabClick(tab.id)}
                   className={`bg-white rounded-2xl p-4 flex flex-col gap-3 shadow-sm hover:shadow-md transition-all cursor-pointer border ${isActive
-                      ? "border-[#7B287A] ring-2 ring-[#7B287A]/10 bg-[#FBF8FC]"
+                      ? "border-[#7b1fa2] ring-2 ring-[#7b1fa2]/10 bg-[#FBF8FC]"
                       : "border-gray-50"
                     }`}
                 >
-                  <div className={isActive ? "text-[#AC7537]" : "text-[#7B287A]"}>
+                  <div className={isActive ? "text-[#AC7537]" : "text-[#7b1fa2]"}>
                     {tab.icon}
                   </div>
                   <span className="text-gray-800 text-sm font-bold">{tab.label}</span>
@@ -268,18 +268,18 @@ export default function DashboardScreen({
 
       {/* Scan QR */}
       <div className="fixed bottom-20 left-1/2 -translate-x-1/2 z-30">
-        <button className="flex items-center gap-2 bg-[#7B287A] hover:bg-[#682067] text-white px-6 py-3 rounded-full font-bold shadow-lg transition-all text-sm uppercase tracking-wider">
+        <button className="flex items-center gap-2 bg-[#7b1fa2] hover:bg-[#682067] text-white px-6 py-3 rounded-full font-bold shadow-lg transition-all text-sm uppercase tracking-wider">
           <QrCode className="w-4 h-4" /><span>Scan QR</span>
         </button>
       </div>
 
       {/* Bottom Nav */}
       <div className="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white border-t border-gray-200 px-6 py-2.5 z-20 shadow-lg flex items-center justify-between">
-        <button className="flex items-center gap-2 bg-[#EADAB9] text-[#7B287A] py-2 px-4 rounded-full font-bold text-xs shadow-sm">
+        <button className="flex items-center gap-2 bg-[#EADAB9] text-[#7b1fa2] py-2 px-4 rounded-full font-bold text-xs shadow-sm">
           <Home className="w-4 h-4" /><span>Home</span>
         </button>
-        <button onClick={triggerLoader} className="p-2 text-[#7B287A] hover:opacity-80"><Landmark className="w-5 h-5" /></button>
-        <button onClick={triggerLoader} className="p-2 text-[#7B287A] hover:opacity-80"><Settings className="w-5 h-5" /></button>
+        <button onClick={triggerLoader} className="p-2 text-[#7b1fa2] hover:opacity-80"><Landmark className="w-5 h-5" /></button>
+        <button onClick={triggerLoader} className="p-2 text-[#7b1fa2] hover:opacity-80"><Settings className="w-5 h-5" /></button>
       </div>
 
     </div>

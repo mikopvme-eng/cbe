@@ -38,7 +38,7 @@ function ReceiptContent() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
         <div className="bg-white rounded-2xl p-10 shadow text-center max-w-sm">
-          <p className="text-2xl font-bold text-[#7B287A] mb-2">Invalid Receipt</p>
+          <p className="text-2xl font-bold text-[#7b1fa2] mb-2">Invalid Receipt</p>
           <p className="text-gray-500 text-sm">
             This QR code does not contain valid transaction data.
           </p>

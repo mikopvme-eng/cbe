@@ -59,7 +59,7 @@ export default function LoginScreen({ pin, setPin, onSubmit }: LoginScreenProps)
     <div className="h-screen bg-gradient-to-tr from-[#F2F2EF] via-[#F6F6F4] to-[#FAF5FC] flex flex-col font-sans max-w-md mx-auto shadow-md relative overflow-hidden">
       
       {/* Premium Background Orbs for Mesh Gradient Effect */}
-      <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] rounded-full bg-[#7B287A]/5 blur-[80px] pointer-events-none" />
+      <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] rounded-full bg-[#7b1fa2]/5 blur-[80px] pointer-events-none" />
       <div className="absolute bottom-[200px] right-[-100px] w-[300px] h-[300px] rounded-full bg-[#AC7537]/5 blur-[80px] pointer-events-none" />
 
       <style>{`
@@ -85,7 +85,7 @@ export default function LoginScreen({ pin, setPin, onSubmit }: LoginScreenProps)
 
       {/* Language toggle */}
       <div className="flex justify-end px-6 pt-4 relative z-10">
-        <button className="flex items-center gap-1.5 text-[#7B287A] bg-white/60 hover:bg-white backdrop-blur-sm border border-gray-200/50 py-1.5 px-3 rounded-full font-semibold text-xs transition-all hover:scale-105 active:scale-95 shadow-sm">
+        <button className="flex items-center gap-1.5 text-[#7b1fa2] bg-white/60 hover:bg-white backdrop-blur-sm border border-gray-200/50 py-1.5 px-3 rounded-full font-semibold text-xs transition-all hover:scale-105 active:scale-95 shadow-sm">
           <Globe className="w-3.5 h-3.5" /><span>EN</span>
         </button>
       </div>
@@ -96,8 +96,8 @@ export default function LoginScreen({ pin, setPin, onSubmit }: LoginScreenProps)
           <Image src="/CLOGO.png" alt="CBE" width={90} height={90} className="object-contain" priority />
         </div>
         <h1 className="text-gray-800 text-lg font-bold tracking-wide text-center">Commercial Bank of Ethiopia</h1>
-        <div className="w-10 h-0.5 bg-[#7B287A] my-2 rounded-full opacity-60" />
-        <h2 className="text-[#7B287A] text-lg font-extrabold tracking-wide">Welcome</h2>
+        <div className="w-10 h-0.5 bg-[#7b1fa2] my-2 rounded-full opacity-60" />
+        <h2 className="text-[#7b1fa2] text-lg font-extrabold tracking-wide">Welcome</h2>
       </div>
 
       {/* Form */}
@@ -106,10 +106,10 @@ export default function LoginScreen({ pin, setPin, onSubmit }: LoginScreenProps)
         <div
           onClick={() => setShowKeyboard(true)}
           className={`flex items-center bg-white/80 backdrop-blur-md rounded-2xl border-2 px-4 py-2 cursor-pointer transition-all duration-300 ${
-            error ? "border-red-400 shadow-[0_0_12px_rgba(239,68,68,0.15)]" : "border-[#7B287A]/40 hover:border-[#7B287A] focus-within:border-[#7B287A] focus-within:shadow-[0_0_12px_rgba(123,40,122,0.1)]"
+            error ? "border-red-400 shadow-[0_0_12px_rgba(239,68,68,0.15)]" : "border-[#7b1fa2]/40 hover:border-[#7b1fa2] focus-within:border-[#7b1fa2] focus-within:shadow-[0_0_12px_rgba(123,40,122,0.1)]"
           } ${shake ? "shake-anim" : ""}`}
         >
-          <Lock className="w-3 h-3 text-[#7B287A]/60 mr-4 flex-shrink-0" />
+          <Lock className="w-3 h-3 text-[#7b1fa2]/60 mr-4 flex-shrink-0" />
           <div className="flex items-center flex-1 h-10 gap-1 px-2">
             {pin.length === 0 ? (
               <span className="text-gray-400 text-sm font-medium">PIN</span>
@@ -118,7 +118,7 @@ export default function LoginScreen({ pin, setPin, onSubmit }: LoginScreenProps)
                 {"•".repeat(pin.length)}
               </span>
             )}
-            <span className="w-[1.5px] h-5 bg-[#7B287A] animate-pulse opacity-70" />
+            <span className="w-[1.5px] h-5 bg-[#7b1fa2] animate-pulse opacity-70" />
           </div>
         </div>
 
@@ -137,8 +137,8 @@ export default function LoginScreen({ pin, setPin, onSubmit }: LoginScreenProps)
 
         {/* Feedback */}
         <div className="flex items-center justify-center gap-1.5 mt-1 cursor-pointer hover:opacity-80 transition-opacity">
-          <span className="text-[#7B287A] font-bold text-sm">Feedback</span>
-          <MessageSquare className="w-4 h-4 text-[#7B287A] fill-current" />
+          <span className="text-[#7b1fa2] font-bold text-sm">Feedback</span>
+          <MessageSquare className="w-4 h-4 text-[#7b1fa2] fill-current" />
         </div>
       </div>
 
@@ -170,13 +170,13 @@ export default function LoginScreen({ pin, setPin, onSubmit }: LoginScreenProps)
                       <svg width="26" height="22" viewBox="0 0 26 22" fill="none" className="transition-transform active:scale-90">
                         <path
                           d="M10 1H23C24.1 1 25 1.9 25 3V19C25 20.1 24.1 21 23 21H10L1 11L10 1Z"
-                          stroke="#7B287A" strokeWidth="1.8" fill="none"
+                          stroke="#7b1fa2" strokeWidth="1.8" fill="none"
                         />
-                        <line x1="13" y1="7.5" x2="19" y2="14.5" stroke="#7B287A" strokeWidth="1.8" strokeLinecap="round" />
-                        <line x1="19" y1="7.5" x2="13" y2="14.5" stroke="#7B287A" strokeWidth="1.8" strokeLinecap="round" />
+                        <line x1="13" y1="7.5" x2="19" y2="14.5" stroke="#7b1fa2" strokeWidth="1.8" strokeLinecap="round" />
+                        <line x1="19" y1="7.5" x2="13" y2="14.5" stroke="#7b1fa2" strokeWidth="1.8" strokeLinecap="round" />
                       </svg>
                     ) : key === "submit" ? (
-                      <Check className="w-6 h-6 text-[#7B287A] transition-transform active:scale-90" strokeWidth={3} />
+                      <Check className="w-6 h-6 text-[#7b1fa2] transition-transform active:scale-90" strokeWidth={3} />
                     ) : (
                       <span className="text-gray-800">{key}</span>
                     )}
@@ -189,10 +189,10 @@ export default function LoginScreen({ pin, setPin, onSubmit }: LoginScreenProps)
       ) : (
         <div className="px-6 pb-4 mt-auto relative z-20">
           <div className="grid grid-cols-2 gap-4 mb-3">
-            <button className="flex items-center justify-center gap-2 bg-[#EADCEB] hover:bg-[#e2cee3] active:scale-98 text-[#7B287A] py-3.5 px-4 rounded-xl font-bold text-sm transition-all shadow-sm">
+            <button className="flex items-center justify-center gap-2 bg-[#EADCEB] hover:bg-[#e2cee3] active:scale-98 text-[#7b1fa2] py-3.5 px-4 rounded-xl font-bold text-sm transition-all shadow-sm">
               <LayoutGrid className="w-4 h-4" /><span>Other Services</span>
             </button>
-            <button className="flex items-center justify-center gap-2 bg-[#EADCEB] hover:bg-[#e2cee3] active:scale-98 text-[#7B287A] py-3.5 px-4 rounded-xl font-bold text-sm transition-all shadow-sm">
+            <button className="flex items-center justify-center gap-2 bg-[#EADCEB] hover:bg-[#e2cee3] active:scale-98 text-[#7b1fa2] py-3.5 px-4 rounded-xl font-bold text-sm transition-all shadow-sm">
               <MessageSquare className="w-4 h-4" /><span>Chatbot</span>
             </button>
           </div>

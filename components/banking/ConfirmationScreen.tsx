@@ -70,7 +70,7 @@ export default function ConfirmationScreen({
   const qrPayload = `${origin}/qr-loading?d=${encoded}`
 
   return (
-    <div className="h-screen bg-[#7B287A] flex flex-col font-sans max-w-md mx-auto shadow-md overflow-hidden relative">
+    <div className="h-screen bg-[#7b1fa2] flex flex-col font-sans max-w-md mx-auto shadow-md overflow-hidden relative">
 
       {/* Close button - top right */}
       <button
@@ -81,7 +81,7 @@ export default function ConfirmationScreen({
       </button>
 
       {/* ── 1. Purple Header ─────────────────────────────────────── */}
-      <div className="bg-[#7B287A] px-5 pt-10 pb-20 flex items-center justify-between relative flex-shrink-0">
+      <div className="bg-[#7b1fa2] px-5 pt-10 pb-20 flex items-center justify-between relative flex-shrink-0">
 
         {/* Left: Shield icon + Thank you / Success */}
         <div className="flex items-center gap-3">
@@ -95,7 +95,7 @@ export default function ConfirmationScreen({
             strokeLinejoin="round"
           >
             <path d="M12 2L3 6.5v5c0 4.55 3.84 8.74 9 9.5 5.16-.76 9-4.95 9-9.5v-5L12 2z" fill="white" stroke="none" />
-            <path d="M9 12l2 2 4-4" stroke="#7B287A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M9 12l2 2 4-4" stroke="#7b1fa2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
 
           <div>
@@ -106,7 +106,7 @@ export default function ConfirmationScreen({
 
         {/* Central purple circle — pinned to header bottom, protrudes down */}
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-20">
-          <div className="w-20 h-20 rounded-full bg-[#7B287A] border-4 border-white flex items-center justify-center shadow-lg">
+          <div className="w-20 h-20 rounded-full bg-[#7b1fa2] border-4 border-white flex items-center justify-center shadow-lg">
             <svg viewBox="0 0 24 24" fill="none" className="w-10 h-10" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="20 6 9 17 4 12" />
             </svg>
@@ -180,7 +180,7 @@ export default function ConfirmationScreen({
           {/* Receipt */}
           <button
             onClick={onReceiptClick}
-            className="flex flex-col items-center gap-1 text-gray-800 hover:text-[#7B287A] transition-colors"
+            className="flex flex-col items-center gap-1 text-gray-800 hover:text-[#7b1fa2] transition-colors"
           >
             <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
               <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" />
@@ -192,7 +192,7 @@ export default function ConfirmationScreen({
           </button>
 
           {/* Download */}
-          <button className="flex flex-col items-center gap-1 text-gray-800 hover:text-[#7B287A] transition-colors">
+          <button className="flex flex-col items-center gap-1 text-gray-800 hover:text-[#7b1fa2] transition-colors">
             <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
               <path d="M12 3v13M7 12l5 5 5-5" />
               <path d="M5 19h14" />
@@ -201,7 +201,7 @@ export default function ConfirmationScreen({
           </button>
 
           {/* Share */}
-          <button className="flex flex-col items-center gap-1 text-gray-800 hover:text-[#7B287A] transition-colors">
+          <button className="flex flex-col items-center gap-1 text-gray-800 hover:text-[#7b1fa2] transition-colors">
             <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="18" cy="5" r="2" />
               <circle cx="6" cy="12" r="2" />

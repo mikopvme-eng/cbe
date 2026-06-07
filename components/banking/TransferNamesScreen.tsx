@@ -49,7 +49,7 @@ export default function TransferNamesScreen({
     <div className="h-screen bg-[#F0EBF2] flex flex-col font-sans max-w-md mx-auto shadow-md overflow-hidden">
 
       {/* Header — solid purple, back arrow + title */}
-      <div className="bg-[#7B287A] px-5 py-4 flex items-center gap-4 shadow-md">
+      <div className="bg-[#7b1fa2] px-5 py-4 flex items-center gap-4 shadow-md">
         <button
           onClick={onBack}
           className="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center hover:bg-white/25 transition-colors"
@@ -78,7 +78,7 @@ export default function TransferNamesScreen({
         </div>
 
         {/* Account Number Field */}
-        <div className="bg-white rounded-2xl flex items-center px-4 py-1 gap-3 border border-gray-100 shadow-sm focus-within:border-[#7B287A] transition-colors">
+        <div className="bg-white rounded-2xl flex items-center px-4 py-1 gap-3 border border-gray-100 shadow-sm focus-within:border-[#7b1fa2] transition-colors">
           <CreditCard className="w-5 h-5 text-gray-400 flex-shrink-0" />
           <Input
             type="text"
@@ -87,13 +87,13 @@ export default function TransferNamesScreen({
             onChange={(e) => setAccountNumber(e.target.value)}
             className="flex-1 border-0 bg-transparent text-gray-800 placeholder-gray-400 text-sm focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 py-4 px-0"
           />
-          <button className="text-gray-400 hover:text-[#7B287A] transition-colors">
+          <button className="text-gray-400 hover:text-[#7b1fa2] transition-colors">
             <QrCode className="w-5 h-5" />
           </button>
         </div>
 
         {/* Amount Field */}
-        <div className="bg-white rounded-2xl flex items-center px-4 py-1 gap-3 border border-gray-100 shadow-sm focus-within:border-[#7B287A] transition-colors">
+        <div className="bg-white rounded-2xl flex items-center px-4 py-1 gap-3 border border-gray-100 shadow-sm focus-within:border-[#7b1fa2] transition-colors">
           <Banknote className="w-5 h-5 text-gray-400 flex-shrink-0" />
           <Input
             type="number"
@@ -106,7 +106,7 @@ export default function TransferNamesScreen({
 
         {/* Remark Toggle */}
         {showRemark ? (
-          <div className="bg-white rounded-2xl flex items-center px-4 py-1 gap-3 border border-gray-100 shadow-sm focus-within:border-[#7B287A] transition-colors">
+          <div className="bg-white rounded-2xl flex items-center px-4 py-1 gap-3 border border-gray-100 shadow-sm focus-within:border-[#7b1fa2] transition-colors">
             <Input
               type="text"
               placeholder="Remark (optional)"
@@ -118,7 +118,7 @@ export default function TransferNamesScreen({
         ) : (
           <button
             onClick={() => setShowRemark(true)}
-            className="flex items-center gap-2 text-[#7B287A] text-sm font-semibold hover:opacity-80 px-1"
+            className="flex items-center gap-2 text-[#7b1fa2] text-sm font-semibold hover:opacity-80 px-1"
           >
             <Plus className="w-4 h-4" />
             <span>Add remark</span>
@@ -130,7 +130,7 @@ export default function TransferNamesScreen({
         <Button
           onClick={onSubmit}
           disabled={!accountNumber || !amount}
-          className="w-full bg-[#7B287A] hover:bg-[#682067] disabled:opacity-50 text-white text-base font-bold py-6 rounded-2xl shadow-md transition-colors mt-1"
+          className="w-full bg-[#7b1fa2] hover:bg-[#682067] disabled:opacity-50 text-white text-base font-bold py-6 rounded-2xl shadow-md transition-colors mt-1"
         >
           Continue
         </Button>
@@ -141,7 +141,7 @@ export default function TransferNamesScreen({
           {recentTransfers.length > 0 && (
             <button
               onClick={onClearAll}
-              className="text-[#7B287A] text-xs font-semibold hover:underline"
+              className="text-[#7b1fa2] text-xs font-semibold hover:underline"
             >
               Clear all
             </button>
@@ -159,11 +159,11 @@ export default function TransferNamesScreen({
               <div
                 key={idx}
                 onClick={() => onSelectRecent(t.name, t.account)}
-                className="bg-white rounded-2xl px-4 py-3.5 flex items-center gap-4 shadow-sm border border-gray-50 hover:shadow-md hover:border-[#7B287A]/20 transition-all cursor-pointer group"
+                className="bg-white rounded-2xl px-4 py-3.5 flex items-center gap-4 shadow-sm border border-gray-50 hover:shadow-md hover:border-[#7b1fa2]/20 transition-all cursor-pointer group"
               >
                 {/* Avatar icon */}
                 <div className="w-10 h-10 rounded-full bg-[#F3EBF4] flex items-center justify-center flex-shrink-0">
-                  <Landmark className="w-5 h-5 text-[#7B287A]" />
+                  <Landmark className="w-5 h-5 text-[#7b1fa2]" />
                 </div>
 
                 {/* Name + account */}
@@ -183,7 +183,7 @@ export default function TransferNamesScreen({
                   >
                     <Trash2 className="w-4 h-4" />
                   </button>
-                  <ChevronRight className="w-4 h-4 text-gray-300 group-hover:text-[#7B287A] transition-colors" />
+                  <ChevronRight className="w-4 h-4 text-gray-300 group-hover:text-[#7b1fa2] transition-colors" />
                 </div>
               </div>
             ))

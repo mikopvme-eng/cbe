@@ -101,7 +101,7 @@ export default function AmountScreen({
       `}</style>
 
       {/* Header */}
-      <div className="bg-[#7B287A] px-5 py-4 flex items-center gap-4 shadow-md">
+      <div className="bg-[#7b1fa2] px-5 py-4 flex items-center gap-4 shadow-md">
         <button
           onClick={onBack}
           className="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center hover:bg-white/25 transition-colors"
@@ -115,7 +115,7 @@ export default function AmountScreen({
       <div className="flex-1 px-5 py-5 flex flex-col gap-4">
 
         {/* Transfer To */}
-        <div className="bg-[#7B287A] rounded-2xl px-5 py-4 flex flex-col gap-1 shadow-md">
+        <div className="bg-[#7b1fa2] rounded-2xl px-5 py-4 flex flex-col gap-1 shadow-md">
           <p className="text-[#AC7537] text-sm font-bold">Transfer to</p>
           <div className="flex justify-between items-center text-white text-sm mt-1">
             <span className="text-gray-300">Account holder</span>
@@ -142,7 +142,7 @@ export default function AmountScreen({
         </div>
 
         {/* Amount Field */}
-        <div className="bg-white rounded-2xl flex items-center px-4 py-1 gap-3 border border-gray-100 shadow-sm focus-within:border-[#7B287A] transition-colors">
+        <div className="bg-white rounded-2xl flex items-center px-4 py-1 gap-3 border border-gray-100 shadow-sm focus-within:border-[#7b1fa2] transition-colors">
           <Banknote className="w-5 h-5 text-gray-400 flex-shrink-0" />
           <Input
             type="number"
@@ -155,7 +155,7 @@ export default function AmountScreen({
 
         {/* Remark Toggle */}
         {showRemark ? (
-          <div className="bg-white rounded-2xl flex items-center px-4 py-1 gap-3 border border-gray-100 shadow-sm focus-within:border-[#7B287A] transition-colors">
+          <div className="bg-white rounded-2xl flex items-center px-4 py-1 gap-3 border border-gray-100 shadow-sm focus-within:border-[#7b1fa2] transition-colors">
             <Input
               type="text"
               placeholder="Remark (optional)"
@@ -167,7 +167,7 @@ export default function AmountScreen({
         ) : (
           <button
             onClick={() => setShowRemark(true)}
-            className="flex items-center gap-2 text-[#7B287A] text-sm font-semibold hover:opacity-80 px-1"
+            className="flex items-center gap-2 text-[#7b1fa2] text-sm font-semibold hover:opacity-80 px-1"
           >
             <Plus className="w-4 h-4" />
             <span>Add remark</span>
@@ -179,7 +179,7 @@ export default function AmountScreen({
         <Button
           onClick={() => setShowConfirm(true)}
           disabled={!amount || amountNumber <= 0}
-          className="w-full bg-[#7B287A] hover:bg-[#682067] disabled:opacity-50 text-white text-base font-bold py-6 rounded-2xl shadow-md transition-colors mt-2"
+          className="w-full bg-[#7b1fa2] hover:bg-[#682067] disabled:opacity-50 text-white text-base font-bold py-6 rounded-2xl shadow-md transition-colors mt-2"
         >
           Transfer
         </Button>
@@ -219,7 +219,7 @@ export default function AmountScreen({
 
                 <div className="flex justify-between items-center py-4 border-b border-gray-100">
                   <span className="text-gray-400 text-sm font-medium">Total Amount</span>
-                  <span className="text-[#7B287A] text-xl font-extrabold">
+                  <span className="text-[#7b1fa2] text-xl font-extrabold">
                     {amountNumber.toFixed(2)} <span className="text-sm font-bold">ETB</span>
                   </span>
                 </div>
@@ -233,7 +233,7 @@ export default function AmountScreen({
                   </button>
                   <button
                     onClick={() => setShowPinEntry(true)}
-                    className="flex-1 py-4 rounded-2xl bg-[#7B287A] text-white font-bold text-base hover:bg-[#682067] transition-colors shadow-md"
+                    className="flex-1 py-4 rounded-2xl bg-[#7b1fa2] text-white font-bold text-base hover:bg-[#682067] transition-colors shadow-md"
                   >
                     Continue
                   </button>
@@ -250,22 +250,22 @@ export default function AmountScreen({
                     <div className="flex-1" />
                     <button
                       onClick={handleCloseSheet}
-                      className="w-8 h-8 flex items-center justify-center text-[#7B287A] hover:opacity-70 transition-opacity"
+                      className="w-8 h-8 flex items-center justify-center text-[#7b1fa2] hover:opacity-70 transition-opacity"
                     >
                       <X className="w-5 h-5" />
                     </button>
                   </div>
 
-                  <h2 className="text-[#7B287A] text-lg font-bold text-center mb-4">
+                  <h2 className="text-[#7b1fa2] text-lg font-bold text-center mb-4">
                     Enter your PIN to confirm
                   </h2>
 
                   {/* PIN Display Field */}
                   <div
-                    className={`flex items-center bg-white rounded-2xl border-2 px-4 py-3 gap-3 ${pinError ? "border-red-400" : "border-[#7B287A]"
+                    className={`flex items-center bg-white rounded-2xl border-2 px-4 py-3 gap-3 ${pinError ? "border-red-400" : "border-[#7b1fa2]"
                       } ${shake ? "tx-shake" : ""}`}
                   >
-                    <Lock className="w-3 h-3 text-[#7B287A] flex-shrink-0" />
+                    <Lock className="w-3 h-3 text-[#7b1fa2] flex-shrink-0" />
                     <div className="flex items-center flex-1 h-6 gap-1 px-2">
                       {pinInput.length === 0 ? (
                         <span className="text-gray-400 text-sm font-medium">Enter your PIN</span>
@@ -274,7 +274,7 @@ export default function AmountScreen({
                           {"•".repeat(pinInput.length)}
                         </span>
                       )}
-                      <span className="w-[1.5px] h-5 bg-[#7B287A] animate-pulse opacity-70" />
+                      <span className="w-[1.5px] h-5 bg-[#7b1fa2] animate-pulse opacity-70" />
                     </div>
                   </div>
 
@@ -299,13 +299,13 @@ export default function AmountScreen({
                             <svg width="28" height="24" viewBox="0 0 28 24" fill="none">
                               <path
                                 d="M11 1H25C26.1 1 27 1.9 27 3V21C27 22.1 26.1 23 25 23H11L1 12L11 1Z"
-                                stroke="#7B287A" strokeWidth="1.8" fill="none"
+                                stroke="#7b1fa2" strokeWidth="1.8" fill="none"
                               />
-                              <line x1="14" y1="8" x2="21" y2="16" stroke="#7B287A" strokeWidth="1.8" strokeLinecap="round" />
-                              <line x1="21" y1="8" x2="14" y2="16" stroke="#7B287A" strokeWidth="1.8" strokeLinecap="round" />
+                              <line x1="14" y1="8" x2="21" y2="16" stroke="#7b1fa2" strokeWidth="1.8" strokeLinecap="round" />
+                              <line x1="21" y1="8" x2="14" y2="16" stroke="#7b1fa2" strokeWidth="1.8" strokeLinecap="round" />
                             </svg>
                           ) : key === "submit" ? (
-                            <Check className="w-7 h-7 text-[#7B287A]" strokeWidth={2.5} />
+                            <Check className="w-7 h-7 text-[#7b1fa2]" strokeWidth={2.5} />
                           ) : (
                             <span className="text-gray-800">{key}</span>
                           )}
@@ -319,7 +319,7 @@ export default function AmountScreen({
                 <div className="px-4 pt-2 pb-8">
                   <button
                     onClick={() => handleNumKey("submit")}
-                    className="w-full bg-[#7B287A] hover:bg-[#682067] active:scale-[0.98] text-white text-base font-bold py-4 rounded-full shadow-md transition-all"
+                    className="w-full bg-[#7b1fa2] hover:bg-[#682067] active:scale-[0.98] text-white text-base font-bold py-4 rounded-full shadow-md transition-all"
                   >
                     Transfer
                   </button>

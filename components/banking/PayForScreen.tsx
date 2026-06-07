@@ -37,7 +37,7 @@ export default function PayForScreen({
   return (
     <div className="h-screen bg-[#F5F5F3] flex flex-col font-sans max-w-md mx-auto shadow-md overflow-hidden">
       {/* Header */}
-      <div className="bg-[#7B287A] text-white px-5 py-4 flex items-center gap-4 shadow-sm relative z-10">
+      <div className="bg-[#7b1fa2] text-white px-5 py-4 flex items-center gap-4 shadow-sm relative z-10">
         <button onClick={onBack} className="p-1.5 hover:bg-white/10 rounded-full transition-colors">
           <ArrowLeft className="w-6 h-6" />
         </button>
@@ -47,7 +47,7 @@ export default function PayForScreen({
       {/* Content */}
       <div className="flex-1 p-5">
         <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 flex flex-col gap-4">
-          <h3 className="text-[#7B287A] font-extrabold text-base">Contact Details</h3>
+          <h3 className="text-[#7b1fa2] font-extrabold text-base">Contact Details</h3>
           <p className="text-gray-400 text-xs -mt-2">
             Save sender &amp; receiver names for use in future payments.
           </p>
@@ -57,8 +57,8 @@ export default function PayForScreen({
             <label className="text-gray-600 text-xs font-semibold tracking-wide uppercase">
               Sender Name
             </label>
-            <div className="flex items-center bg-[#F5F3FF] rounded-xl px-4 py-1 gap-3 border border-[#7B287A]/15 focus-within:border-[#7B287A] transition-colors">
-              <User className="w-4 h-4 text-[#7B287A] flex-shrink-0" />
+            <div className="flex items-center bg-[#F5F3FF] rounded-xl px-4 py-1 gap-3 border border-[#7b1fa2]/15 focus-within:border-[#7b1fa2] transition-colors">
+              <User className="w-4 h-4 text-[#7b1fa2] flex-shrink-0" />
               <Input
                 type="text"
                 placeholder="Sender"
@@ -74,8 +74,8 @@ export default function PayForScreen({
             <label className="text-gray-600 text-xs font-semibold tracking-wide uppercase">
               Receiver Name
             </label>
-            <div className="flex items-center bg-[#F5F3FF] rounded-xl px-4 py-1 gap-3 border border-[#7B287A]/15 focus-within:border-[#7B287A] transition-colors">
-              <UserCheck className="w-4 h-4 text-[#7B287A] flex-shrink-0" />
+            <div className="flex items-center bg-[#F5F3FF] rounded-xl px-4 py-1 gap-3 border border-[#7b1fa2]/15 focus-within:border-[#7b1fa2] transition-colors">
+              <UserCheck className="w-4 h-4 text-[#7b1fa2] flex-shrink-0" />
               <Input
                 type="text"
                 placeholder="receiver"
@@ -98,7 +98,7 @@ export default function PayForScreen({
           <Button
             onClick={handleSaveNames}
             disabled={!formSender.trim() || !formReceiver.trim()}
-            className="w-full bg-[#7B287A] hover:bg-[#682067] disabled:opacity-50 text-white font-bold py-5 rounded-xl text-sm transition-colors flex items-center justify-center gap-2 mt-2"
+            className="w-full bg-[#7b1fa2] hover:bg-[#682067] disabled:opacity-50 text-white font-bold py-5 rounded-xl text-sm transition-colors flex items-center justify-center gap-2 mt-2"
           >
             <Save className="w-4 h-4" />
             Save Names
