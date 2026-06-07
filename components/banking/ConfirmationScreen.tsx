@@ -143,14 +143,15 @@ export default function ConfirmationScreen({
             {"\n"}Total Amount Debited: {totalAmount.toFixed(2)} ETB with Service Charge of ETB{serviceCharge.toFixed(2)}, VAT (15%) of ETB{vatOnCharge.toFixed(2)} and Disaster Recovery (5%) of ETB{disasterRecovery.toFixed(2)}.
           </p>
 
-          {/* QR Code — static image */}
+          {/* QR Code — dynamically generated from transaction data */}
           <div className="flex justify-center py-2">
-            <Image
-              src="/qr-code.png"
-              alt="QR Code"
-              width={185}
-              height={185}
-              className="object-contain"
+            <QRCodeSVG
+              value={qrPayload}
+              size={185}
+              bgColor="#F0F0F0"
+              fgColor="#1a1a1a"
+              level="M"
+              includeMargin={false}
             />
           </div>
 
