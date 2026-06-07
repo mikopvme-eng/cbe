@@ -55,7 +55,7 @@ export default function DashboardScreen({
   const [activeTab, setActiveTab] = useState<TabId | null>(null)
   const [loadingTab, setLoadingTab] = useState(false)
 
-  const firstNameRaw = savedSenderName ? savedSenderName.split(" ")[0] : "Rahel"
+  const firstNameRaw = savedSenderName ? savedSenderName.split(" ")[0] : "Solomon"
   const firstName = firstNameRaw.charAt(0).toUpperCase() + firstNameRaw.slice(1).toLowerCase()
 
   const handleCopyAccount = () => {

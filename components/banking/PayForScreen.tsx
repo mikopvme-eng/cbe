@@ -61,7 +61,7 @@ export default function PayForScreen({
               <User className="w-4 h-4 text-[#7B287A] flex-shrink-0" />
               <Input
                 type="text"
-                placeholder="e.g. Rahel Seifu Bekele"
+                placeholder="Sender"
                 value={formSender}
                 onChange={e => setFormSender(e.target.value)}
                 className="flex-1 border-0 bg-transparent text-gray-800 placeholder-gray-400 text-sm focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 py-3 px-0"
@@ -78,7 +78,7 @@ export default function PayForScreen({
               <UserCheck className="w-4 h-4 text-[#7B287A] flex-shrink-0" />
               <Input
                 type="text"
-                placeholder="e.g. Zeyneba Meki Yasin"
+                placeholder="receiver"
                 value={formReceiver}
                 onChange={e => setFormReceiver(e.target.value)}
                 className="flex-1 border-0 bg-transparent text-gray-800 placeholder-gray-400 text-sm focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 py-3 px-0"

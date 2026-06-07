@@ -204,7 +204,7 @@ export default function AmountScreen({
                 <div className="flex justify-between items-start py-4 border-b border-gray-100">
                   <span className="text-gray-400 text-sm font-medium">From</span>
                   <div className="text-right">
-                    <p className="text-gray-900 text-sm font-bold">Rahel Seifu Bekele</p>
+                    <p className="text-gray-900 text-sm font-bold">Girma Sisay Bekele</p>
                     <p className="text-gray-500 text-xs mt-0.5">1********2766</p>
                   </div>
                 </div>
