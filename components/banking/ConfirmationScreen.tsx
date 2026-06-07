@@ -1,7 +1,8 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import Image from "next/image"
-import { QRCodeSVG } from "qrcode.react"
+import { X } from "lucide-react"
 import { SERVICE_CHARGE, DEFAULT_SENDER_NAME, DEFAULT_RECEIVER_NAME } from "@/lib/constants"
 
 interface ConfirmationScreenProps {
@@ -30,6 +31,22 @@ export default function ConfirmationScreen({
   onClose,
   onReceiptClick,
 }: ConfirmationScreenProps) {
+  const [loadingTime, setLoadingTime] = useState(120) // 2 minutes in seconds
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setLoadingTime(prev => {
+        if (prev <= 1) {
+          clearInterval(timer)
+          return 0
+        }
+        return prev - 1
+      })
+    }, 1000)
+
+    return () => clearInterval(timer)
+  }, [])
+
   const displaySenderName = senderName?.trim() || DEFAULT_SENDER_NAME
   const displayReceiverName = receiverName?.trim() || DEFAULT_RECEIVER_NAME
   const displayAmount = amount || "1500.00"
@@ -70,6 +87,14 @@ export default function ConfirmationScreen({
   return (
     <div className="h-screen bg-[#7B287A] flex flex-col font-sans max-w-md mx-auto shadow-md overflow-hidden relative">
 
+      {/* Close button - top right */}
+      <button
+        onClick={onClose}
+        className="absolute top-4 right-4 z-30 w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors"
+      >
+        <X className="w-5 h-5 text-white" />
+      </button>
+
       {/* ── 1. Purple Header ─────────────────────────────────────── */}
       <div className="bg-[#7B287A] px-5 pt-10 pb-20 flex items-center justify-between relative flex-shrink-0">
 
@@ -94,22 +119,10 @@ export default function ConfirmationScreen({
           </div>
         </div>
 
-        {/* Right: QR scan icon button */}
-        <button className="w-10 h-10 rounded-full border-2 border-white/60 flex items-center justify-center">
-          <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 text-white" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M3 7V5a2 2 0 012-2h2" />
-            <path d="M17 3h2a2 2 0 012 2v2" />
-            <path d="M21 17v2a2 2 0 01-2 2h-2" />
-            <path d="M7 21H5a2 2 0 01-2-2v-2" />
-            <rect x="7" y="7" width="10" height="10" rx="1" />
-            <rect x="9" y="9" width="6" height="6" rx="0.5" fill="white" stroke="none" />
-          </svg>
-        </button>
-
         {/* Central purple circle — pinned to header bottom, protrudes down */}
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-20">
-          <div className="w-20 h-20 rounded-full bg-[#7B287A] border-4 border-white flex items-center justify-center shadow-lg">
-            <svg viewBox="0 0 24 24" fill="none" className="w-10 h-10" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <div className="w-28 h-28 rounded-full bg-[#7B287A] border-4 border-white flex items-center justify-center shadow-lg">
+            <svg viewBox="0 0 24 24" fill="none" className="w-14 h-14" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="20 6 9 17 4 12" />
             </svg>
           </div>
@@ -145,16 +158,14 @@ export default function ConfirmationScreen({
             {"\n"}Total Amount Debited: {totalAmount.toFixed(2)} ETB with Service Charge of ETB{serviceCharge.toFixed(2)}, VAT (15%) of ETB{vatOnCharge.toFixed(2)} and Disaster Recovery (5%) of ETB{disasterRecovery.toFixed(2)}.
           </p>
 
-          {/* QR Code — dynamically generated from transaction data */}
-          <div className="flex justify-center py-2">
-            <QRCodeSVG
-              value={qrPayload}
-              size={185}
-              bgColor="#F0F0F0"
-              fgColor="#1a1a1a"
-              level="M"
-              includeMargin={false}
-            />
+          {/* Loading Timer - 2 minute countdown */}
+          <div className="flex justify-center py-4">
+            <div className="flex flex-col items-center gap-2">
+              <div className="w-16 h-16 rounded-full border-4 border-[#7B287A] border-t-transparent animate-spin" />
+              <p className="text-gray-600 text-sm font-medium">
+                Redirecting in {Math.floor(loadingTime / 60)}:{(loadingTime % 60).toString().padStart(2, '0')}
+              </p>
+            </div>
           </div>
 
           {/* CBE branding row */}
