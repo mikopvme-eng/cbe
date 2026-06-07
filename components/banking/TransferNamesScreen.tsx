@@ -63,17 +63,17 @@ export default function TransferNamesScreen({
       <div className="flex-1 px-5 py-5 flex flex-col gap-4 pb-10">
 
         {/* From Account Card — dark */}
-        <div className="bg-[#1E1E2E] rounded-2xl px-5 py-3 flex flex-col gap-2 shadow-lg">
+        <div className="bg-[#1b252e] rounded-2xl px-5 pt-3 py-2.5 flex flex-col gap-2 shadow-lg">
           <p className="text-[#e2d09e] text-xs font-semibold tracking-wider uppercase">From Account</p>
           <p className="text-[#e2d09e] text-base font-bold">Saving Account - 1********2766</p>
           <div className="flex items-center gap-2 mt-1">
             {/* Masked PIN dots */}
             <div className="flex gap-1">
               {[...Array(6)].map((_, i) => (
-                <div key={i} className="w-2 h-2 rounded-full bg-gray-500" />
+                <div key={i} className="w-1 h-1 rounded-full bg-[#e2d09e]" />
               ))}
             </div>
-            <EyeOff className="w-4 h-4 text-gray-500" />
+            <EyeOff className="w-4 h-4 text-gray-100" />
           </div>
         </div>
 
@@ -149,7 +149,7 @@ export default function TransferNamesScreen({
         </div>
 
         {/* Recent Transfers List */}
-        <div className="flex flex-col gap-3 max-h-48 overflow-y-auto">
+        <div className="flex flex-col gap-3 max-h-60/80 overflow-y-auto">
           {recentTransfers.length === 0 ? (
             <div className="text-center py-6 text-gray-400 text-sm bg-white rounded-2xl border border-dashed border-gray-200">
               No recent transfers found.
@@ -159,7 +159,7 @@ export default function TransferNamesScreen({
               <div
                 key={idx}
                 onClick={() => onSelectRecent(t.name, t.account)}
-                className="bg-white rounded-2xl px-4 py-3.5 flex items-center gap-4 shadow-sm border border-gray-50 hover:shadow-md hover:border-[#7b1fa2]/20 transition-all cursor-pointer group"
+                className="bg-white rounded-2xl px-4 py-1.5 flex items-center gap-4 shadow-sm border border-gray-50 hover:shadow-md hover:border-[#7b1fa2]/20 transition-all cursor-pointer group"
               >
                 {/* Avatar icon */}
                 <div className="w-10 h-10 rounded-full bg-[#F3EBF4] flex items-center justify-center flex-shrink-0">

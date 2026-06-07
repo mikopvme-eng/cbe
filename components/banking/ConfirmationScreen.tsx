@@ -79,7 +79,7 @@ export default function ConfirmationScreen({
       </button>
 
       {/* ── 1. Purple Header ─────────────────────────────────────── */}
-      <div className="bg-[#7b1fa2] px-5 pt-10 pb-20 flex items-center justify-between relative flex-shrink-0">
+      <div className="bg-[#7b1fa2] px-5 pt-10 pb-10 flex items-center justify-between relative flex-shrink-0">
 
         {/* Left: Shield icon + Thank you / Success */}
         <div className="flex items-center gap-3">
@@ -105,7 +105,7 @@ export default function ConfirmationScreen({
         {/* Central purple circle — pinned to header bottom, protrudes down */}
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-20">
           <div className="w-20 h-20 rounded-full bg-[#7b1fa2] border-4 border-white flex items-center justify-center shadow-lg">
-            <svg viewBox="0 0 24 24" fill="none" className="w-10 h-10" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg viewBox="0 0 24 24" fill="none" className="w-15 h-15" stroke="white" strokeWidth="2.5" strokeLinejoin="round">
               <polyline points="20 6 9 17 4 12" />
             </svg>
           </div>
@@ -114,10 +114,10 @@ export default function ConfirmationScreen({
       </div>
 
       {/* ── 2. White body — rounded top, padding clears the overlapping circle ─ */}
-      <div className="flex-1 bg-white rounded-t-[2.5rem] px-5 pt-8 pb-4 flex flex-col gap-4 overflow-hidden">
+      <div className="flex-1 bg-white rounded-t-[2.5rem] px-5 pt-12 pb-8 flex flex-col gap-5 overflow-hidden">
 
         {/* Subtitle */}
-        <p className="text-gray-700 text-sm font-medium text-center -mt-1">
+        <p className="text-gray-700 text-xs font-medium text-center -mt-1">
           Transaction Completed Successfully!
         </p>
 
@@ -216,7 +216,7 @@ export default function ConfirmationScreen({
         {/* ── 5. Close pill button ── */}
         <button
           onClick={onClose}
-          className="w-full py-4 rounded-full bg-gray-200 hover:bg-gray-300 text-gray-600 font-semibold text-base transition-colors"
+          className="w-full py-2 rounded-full bg-gray-200 hover:bg-gray-300 text-gray-600 font-semibold text-base transition-colors"
         >
           Close
         </button>
