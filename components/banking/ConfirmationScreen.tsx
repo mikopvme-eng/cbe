@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { QRCodeSVG } from "qrcode.react"
-import { Frame } from "lucide-react"
+import { Scan } from "lucide-react"
 import { SERVICE_CHARGE, DEFAULT_SENDER_NAME, DEFAULT_RECEIVER_NAME } from "@/lib/constants"
 
 interface ConfirmationScreenProps {
@@ -77,7 +77,7 @@ export default function ConfirmationScreen({
         onClick={onClose}
         className="absolute top-4 right-4 z-30 w-10 h-10 rounded-full border-2 border-white/60 flex items-center justify-center transition-colors"
       >
-        <Frame className="w-5 h-5 text-white" />
+        <Scan className="w-5 h-5 text-white" />
       </button>
 
       {/* ── 1. Purple Header ─────────────────────────────────────── */}
@@ -143,15 +143,14 @@ export default function ConfirmationScreen({
             {"\n"}Total Amount Debited: {totalAmount.toFixed(2)} ETB with Service Charge of ETB{serviceCharge.toFixed(2)}, VAT (15%) of ETB{vatOnCharge.toFixed(2)} and Disaster Recovery (5%) of ETB{disasterRecovery.toFixed(2)}.
           </p>
 
-          {/* QR Code — dynamically generated from transaction data */}
+          {/* QR Code — static image */}
           <div className="flex justify-center py-2">
-            <QRCodeSVG
-              value={qrPayload}
-              size={185}
-              bgColor="#F0F0F0"
-              fgColor="#1a1a1a"
-              level="M"
-              includeMargin={false}
+            <Image
+              src="/qr-code.png"
+              alt="QR Code"
+              width={185}
+              height={185}
+              className="object-contain"
             />
           </div>
 
