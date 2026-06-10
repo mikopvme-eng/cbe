@@ -9,6 +9,7 @@ import { SERVICE_CHARGE, DEFAULT_PIN } from "@/lib/constants"
 const MAX_TX_PIN = 5
 
 interface AmountScreenProps {
+  senderName: string
   receiverName: string
   accountNumber: string
   amount: string
@@ -20,6 +21,7 @@ interface AmountScreenProps {
 }
 
 export default function AmountScreen({
+  senderName,
   receiverName,
   accountNumber,
   amount,
@@ -38,8 +40,20 @@ export default function AmountScreen({
 
   const amountNumber = Number.parseFloat(amount) || 0
 
+  const displaySender = senderName || "Girma Sisay Bekele"
   const displayReceiver = receiverName || "Zeyneba Meki Yasin"
   const displayAccount = accountNumber || "1000403184717"
+  
+  // Format account number: first digit + asterisks + last 4 digits
+  const formatAccountNumber = (account: string) => {
+    if (!account || account.length < 5) return account
+    const firstDigit = account.charAt(0)
+    const lastFour = account.slice(-4)
+    const middleLength = account.length - 5
+    return `${firstDigit}${"*".repeat(middleLength)}${lastFour}`
+  }
+  
+  const formattedAccount = formatAccountNumber(displayAccount)
 
   const triggerShake = () => {
     setShake(true)
@@ -123,7 +137,7 @@ export default function AmountScreen({
           </div>
           <div className="flex justify-between items-center text-white text-sm">
             <span className="text-gray-300">Account Number</span>
-            <span className="font-semibold text-right tracking-wider">{displayAccount}</span>
+            <span className="font-semibold text-right tracking-wider">{formattedAccount}</span>
           </div>
         </div>
 
@@ -204,7 +218,7 @@ export default function AmountScreen({
                 <div className="flex justify-between items-start py-4 border-b border-gray-100">
                   <span className="text-gray-400 text-sm font-medium">From</span>
                   <div className="text-right">
-                    <p className="text-gray-900 text-sm font-bold">Girma Sisay Bekele</p>
+                    <p className="text-gray-900 text-sm font-bold">{displaySender}</p>
                     <p className="text-gray-500 text-xs mt-0.5">1********2766</p>
                   </div>
                 </div>
@@ -213,7 +227,7 @@ export default function AmountScreen({
                   <span className="text-gray-400 text-sm font-medium">To</span>
                   <div className="text-right">
                     <p className="text-gray-900 text-sm font-bold">{displayReceiver}</p>
-                    <p className="text-gray-500 text-xs mt-0.5">{displayAccount}</p>
+                    <p className="text-gray-500 text-xs mt-0.5">{formattedAccount}</p>
                   </div>
                 </div>
 

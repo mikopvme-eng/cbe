@@ -63,7 +63,7 @@ function ReceiptContent() {
 
         {/* ── Header ── */}
         <div className="bg-[#81007F] px-6 py-3 flex items-center justify-center gap-4 mb-0">
-          <Image src="/CLOGO.png" alt="CBE Logo" width={56} height={56} className="rounded-full" />
+          <Image src="/icon.png" alt="CBE Logo" width={56} height={56} className="rounded-full" />
           <div className="text-center">
             <h1 className="text-white/90 text-2xl font-bold">Commercial Bank of Ethiopia</h1>
             <p className="text-white/70 text-sm">VAT Invoice / Customer Receipt</p>

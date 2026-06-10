@@ -156,7 +156,7 @@ export default function ConfirmationScreen({
           {/* CBE branding row */}
           <div className="flex items-center gap-3 pt-3 border-t border-gray-200">
             <Image
-              src="/CLOGO.png"
+              src="/icon.png"
               alt="CBE Logo"
               width={42}
               height={42}

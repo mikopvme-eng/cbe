@@ -196,53 +196,6 @@ export default function CBEMobileBanking() {
     }
   }, [senderName, receiverName, accountNumber, amount, reason, formattedDateTime])
 
-  // Send push notification on confirmation
-  const sendPaymentNotification = useCallback(
-    async (displaySenderName: string, displayReceiverName: string, displayAmount: string) => {
-      const amountNumber = Number.parseFloat(displayAmount) || 0
-      const vatAmount = 0.15 * SERVICE_CHARGE
-      const totalAmount = amountNumber + SERVICE_CHARGE + vatAmount
-
-      const title = "Payment Debited Successfully"
-      const options = {
-        body: `ETB ${Number.parseFloat(displayAmount).toFixed(2)} debited from ${displaySenderName} - ETB-8422 for ${displayReceiverName} - ETB-6278 on ${formattedDateTime.date} with transaction ID: FT26298PT5MY. Total Amount Debited ETB ${totalAmount.toFixed(2)} with commission of ETB ${SERVICE_CHARGE.toFixed(2)} and 15% VAT of ETB ${vatAmount.toFixed(2)}.`,
-        icon: "/cbe-logo.png",
-        badge: "/cbe-logo.png",
-        tag: "payment-notification",
-        requireInteraction: false,
-        silent: false,
-      }
-
-      if ("Notification" in window) {
-        if (Notification.permission === "granted") {
-          new Notification(title, options)
-        } else if (Notification.permission !== "denied") {
-          try {
-            const permission = await Notification.requestPermission()
-            if (permission === "granted") {
-              new Notification(title, options)
-            }
-          } catch (error) {
-            console.error("[CBE] Error requesting notification permission:", error)
-          }
-        }
-      }
-    },
-    [formattedDateTime],
-  )
-
-  useEffect(() => {
-    if (currentScreen === "confirmation") {
-      const displaySenderName = senderName?.toUpperCase() || DEFAULT_SENDER_NAME
-      const displayReceiverName = receiverName?.toUpperCase() || DEFAULT_RECEIVER_NAME
-      const displayAmount = amount || "1500.00"
-
-      setTimeout(() => {
-        sendPaymentNotification(displaySenderName, displayReceiverName, displayAmount)
-      }, 500)
-    }
-  }, [currentScreen, senderName, receiverName, amount, sendPaymentNotification])
-
   // Render screens
   switch (currentScreen) {
     case "login":
@@ -289,6 +242,7 @@ export default function CBEMobileBanking() {
     case "amount":
       return (
         <AmountScreen
+          senderName={senderName}
           receiverName={receiverName}
           accountNumber={accountNumber}
           amount={amount}

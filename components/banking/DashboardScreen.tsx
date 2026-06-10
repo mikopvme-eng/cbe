@@ -164,7 +164,7 @@ export default function DashboardScreen({
           {/* Header Row (Left Aligned) */}
           <div className="flex items-start gap-3 relative z-10">
             <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center flex-shrink-0">
-              <Image src="/CLOGO.png" alt="CBE Logo" width={32} height={32} className="object-contain" />
+              <Image src="/icon.png" alt="CBE Logo" width={32} height={32} className="object-contain" />
             </div>
             <div>
               <h3 className="text-[#e2d09e] text-sm font-bold">Commercial Bank of Ethiopia</h3>

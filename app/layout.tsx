@@ -16,8 +16,8 @@ export const metadata: Metadata = {
     title: "CBE Bank",
   },
   icons: {
-    icon: "/cbe-logo.png",
-    apple: "/cbe-logo.png",
+    icon: "/icon.png",
+    apple: "/icon.png",
   },
 }
 
@@ -46,9 +46,9 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="CBE Bank" />
-        <link rel="apple-touch-icon" href="/cbe-logo.png" />
-        <link rel="icon" type="image/png" href="/cbe-logo.png" />
-        <link rel="shortcut icon" href="/cbe-logo.png" />
+        <link rel="apple-touch-icon" href="/icon.png" />
+        <link rel="icon" type="image/png" href="/icon.png" />
+        <link rel="shortcut icon" href="/icon.png" />
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body>

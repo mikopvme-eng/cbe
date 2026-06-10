@@ -93,7 +93,7 @@ export default function LoginScreen({ pin, setPin, onSubmit }: LoginScreenProps)
       {/* Brand */}
       <div className="flex flex-col items-center mt-3 mb-5 px-6 relative z-10">
         <div className="relative w-28 h-28 mb-3 rounded-full bg-white flex items-center justify-center">
-          <Image src="/CLOGO.png" alt="CBE" width={90} height={90} className="object-contain" priority />
+          <Image src="/icon.png" alt="CBE" width={90} height={90} className="object-contain" priority />
         </div>
         <h1 className="text-gray-800 text-lg font-bold tracking-wide text-center">Commercial Bank of Ethiopia</h1>
         <div className="w-10 h-0.5 bg-[#7b1fa2] my-2 rounded-full opacity-60" />
@@ -105,7 +105,7 @@ export default function LoginScreen({ pin, setPin, onSubmit }: LoginScreenProps)
         {/* PIN display */}
         <div
           onClick={() => setShowKeyboard(true)}
-          className={`flex items-center bg-white/80 backdrop-blur-md rounded-2xl border-2 px-4 py-2 cursor-pointer transition-all duration-300 ${
+          className={`flex items-center bg-white/80 backdrop-blur-md rounded-2xl border-2 px-4 py-1 cursor-pointer transition-all duration-300 ${
             error ? "border-red-400 shadow-[0_0_12px_rgba(239,68,68,0.15)]" : "border-[#7b1fa2]/40 hover:border-[#7b1fa2] focus-within:border-[#7b1fa2] focus-within:shadow-[0_0_12px_rgba(123,40,122,0.1)]"
           } ${shake ? "shake-anim" : ""}`}
         >
