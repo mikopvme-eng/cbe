@@ -307,7 +307,7 @@ export default function AmountScreen({
                           key={key}
                           onMouseDown={(e) => e.preventDefault()}
                           onClick={() => handleNumKey(key)}
-                          className="flex items-center justify-center rounded-2xl py-5 text-2xl font-semibold bg-[#F0F0EE] hover:bg-[#E4E4E2] active:scale-95 active:bg-[#DADADB] transition-all select-none shadow-sm"
+                          className="flex items-center justify-center rounded-2xl py-3 text-2xl font-semibold bg-[#F0F0EE] hover:bg-[#E4E4E2] active:scale-95 active:bg-[#DADADB] transition-all select-none shadow-sm"
                         >
                           {key === "backspace" ? (
                             <svg width="28" height="24" viewBox="0 0 28 24" fill="none">

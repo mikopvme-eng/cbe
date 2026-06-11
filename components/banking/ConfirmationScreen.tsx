@@ -1,10 +1,11 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import { QRCodeSVG } from "qrcode.react"
-import { Scan } from "lucide-react"
+import { Scan, Camera } from "lucide-react"
 import { SERVICE_CHARGE, DEFAULT_SENDER_NAME, DEFAULT_RECEIVER_NAME } from "@/lib/constants"
+import html2canvas from "html2canvas"
 
 interface ConfirmationScreenProps {
   senderName: string
@@ -32,6 +33,7 @@ export default function ConfirmationScreen({
   onClose,
   onReceiptClick,
 }: ConfirmationScreenProps) {
+  const screenRef = useRef<HTMLDivElement>(null)
   const displaySenderName = senderName?.trim() || DEFAULT_SENDER_NAME
   const displayReceiverName = receiverName?.trim() || DEFAULT_RECEIVER_NAME
   const displayAmount = amount || "1500.00"
@@ -67,8 +69,25 @@ export default function ConfirmationScreen({
 
   const qrPayload = "System failer"
 
+  const handleScreenshot = async () => {
+    if (screenRef.current) {
+      try {
+        const canvas = await html2canvas(screenRef.current, {
+          backgroundColor: "#7b1fa2",
+          scale: 2,
+        })
+        const link = document.createElement("a")
+        link.download = `CBE-Transaction-${txId}.png`
+        link.href = canvas.toDataURL()
+        link.click()
+      } catch (error) {
+        console.error("Screenshot failed:", error)
+      }
+    }
+  }
+
   return (
-    <div className="h-screen bg-[#7b1fa2] flex flex-col font-sans max-w-md mx-auto shadow-md overflow-hidden relative">
+    <div ref={screenRef} className="h-screen bg-[#7b1fa2] flex flex-col font-sans max-w-md mx-auto shadow-md overflow-hidden relative">
 
       {/* Close button - top right */}
       <button
@@ -156,10 +175,10 @@ export default function ConfirmationScreen({
           {/* CBE branding row */}
           <div className="flex items-center gap-3 pt-3 border-t border-gray-200">
             <Image
-              src="/icon.png"
+              src="/raw icon.png"
               alt="CBE Logo"
-              width={42}
-              height={42}
+              width={80}
+              height={80}
               className="rounded-full flex-shrink-0"
             />
             <div>
@@ -190,13 +209,12 @@ export default function ConfirmationScreen({
             <span className="text-[10px] font-semibold">Receipt</span>
           </button>
 
-          {/* Download */}
-          <button className="flex flex-col items-center gap-1 text-gray-800 hover:text-[#7b1fa2] transition-colors">
-            <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M12 3v13M7 12l5 5 5-5" />
-              <path d="M5 19h14" />
-            </svg>
-            <span className="text-[10px] font-semibold">Download</span>
+          {/* Screenshot */}
+          <button onClick={handleScreenshot} className="flex flex-col items-center gap-1 text-gray-800 hover:text-[#7b1fa2] transition-colors">
+            <div className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center">
+              <Camera className="w-5 h-5" />
+            </div>
+            <span className="text-[10px] font-semibold">Screenshot</span>
           </button>
 
           {/* Share */}

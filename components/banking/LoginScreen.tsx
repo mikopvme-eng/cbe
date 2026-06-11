@@ -93,7 +93,7 @@ export default function LoginScreen({ pin, setPin, onSubmit }: LoginScreenProps)
       {/* Brand */}
       <div className="flex flex-col items-center mt-3 mb-5 px-6 relative z-10">
         <div className="relative w-28 h-28 mb-3 rounded-full bg-white flex items-center justify-center">
-          <Image src="/icon.png" alt="CBE" width={90} height={90} className="object-contain" priority />
+          <Image src="/playstore-icon.png" alt="CBE" width={80} height={80} className="object-contain" priority />
         </div>
         <h1 className="text-gray-800 text-lg font-bold tracking-wide text-center">Commercial Bank of Ethiopia</h1>
         <div className="w-10 h-0.5 bg-[#7b1fa2] my-2 rounded-full opacity-60" />
@@ -164,7 +164,7 @@ export default function LoginScreen({ pin, setPin, onSubmit }: LoginScreenProps)
                     key={key}
                     onMouseDown={(e) => e.preventDefault()} // prevent input blur
                     onClick={() => handleKey(key)}
-                    className="flex items-center justify-center rounded-2xl py-4 text-xl font-bold shadow-[0_1px_3px_rgba(0,0,0,0.05)] active:scale-95 active:bg-[#e1e1de] transition-all select-none bg-[#E8E8E6] text-gray-800"
+                    className="flex items-center justify-center rounded-2xl py-3 text-xl font-bold shadow-[0_1px_3px_rgba(0,0,0,0.05)] active:scale-95 active:bg-[#e1e1de] transition-all select-none bg-[#E8E8E6] text-gray-800"
                   >
                     {key === "backspace" ? (
                       <svg width="26" height="22" viewBox="0 0 26 22" fill="none" className="transition-transform active:scale-90">
