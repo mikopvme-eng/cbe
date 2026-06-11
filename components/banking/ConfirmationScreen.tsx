@@ -133,7 +133,7 @@ export default function ConfirmationScreen({
       </div>
 
       {/* ── 2. White body — rounded top, padding clears the overlapping circle ─ */}
-      <div className="flex-1 bg-white rounded-t-[2.5rem] px-5 pt-12 pb-8 flex flex-col gap-5 overflow-hidden">
+      <div className="flex-1 bg-white rounded-t-[2.5rem] px-5 pt-10 pb-8 flex flex-col gap-5 overflow-hidden">
 
         {/* Subtitle */}
         <p className="text-gray-700 text-xs font-medium text-center -mt-1">
@@ -211,8 +211,8 @@ export default function ConfirmationScreen({
 
           {/* Screenshot */}
           <button onClick={handleScreenshot} className="flex flex-col items-center gap-1 text-gray-800 hover:text-[#7b1fa2] transition-colors">
-            <div className="w-10 h-10 flex items-center justify-center">
-              <Scan className="w-3 h-3" />
+            <div className="w-5 h-5 flex items-center justify-center">
+              <Scan className="w-4 h-4" />
             </div>
             <span className="text-[10px] font-semibold">Screenshot</span>
           </button>
