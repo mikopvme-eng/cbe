@@ -164,7 +164,7 @@ export default function DashboardScreen({
           {/* Header Row (Left Aligned) */}
           <div className="flex items-start gap-3 relative z-10">
             <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
-              <Image src="rawicon2.png"alt="CBE Logo" width={100} height={100} className="object-contain" />
+              <Image src="rawicon2.png" alt="CBE Logo" width={100} height={100} className="object-contain" />
             </div>
             <div>
               <h3 className="text-[#e2d09e] text-sm font-bold">Commercial Bank of Ethiopia</h3>
@@ -260,8 +260,8 @@ export default function DashboardScreen({
                   key={tab.id}
                   onClick={() => handleTabClick(tab.id)}
                   className={`bg-white rounded-2xl p-4 flex flex-col gap-3 shadow-sm hover:shadow-md transition-all cursor-pointer border ${isActive
-                      ? "border-[#7b1fa2] ring-2 ring-[#7b1fa2]/10 bg-[#FBF8FC]"
-                      : "border-gray-50"
+                    ? "border-[#7b1fa2] ring-2 ring-[#7b1fa2]/10 bg-[#FBF8FC]"
+                    : "border-gray-50"
                     }`}
                 >
                   <div className={isActive ? "text-[#AC7537]" : "text-[#7b1fa2]"}>

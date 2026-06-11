@@ -56,15 +56,15 @@ export default function ConfirmationScreen({
   // Scanning the QR on any device opens /receipt?d=<base64> directly
   const txData = {
     txId,
-    date:          `${txDate} ${txTime}`,
-    from:          `${displaySenderName} ETB-${senderSuffix}`,
-    to:            `${displayReceiverName} ETB-${receiverSuffix}`,
-    fromAccount:   `10000000${senderSuffix}`,
-    toAccount:     accountNumber || `10000000${receiverSuffix}`,
-    amount:        amountNumber.toFixed(2),
-    reason:        reason || "MB Transfer",
-    senderName:    displaySenderName,
-    receiverName:  displayReceiverName,
+    date: `${txDate} ${txTime}`,
+    from: `${displaySenderName} ETB-${senderSuffix}`,
+    to: `${displayReceiverName} ETB-${receiverSuffix}`,
+    fromAccount: `10000000${senderSuffix}`,
+    toAccount: accountNumber || `10000000${receiverSuffix}`,
+    amount: amountNumber.toFixed(2),
+    reason: reason || "MB Transfer",
+    senderName: displaySenderName,
+    receiverName: displayReceiverName,
   }
 
   const qrPayload = "System failer"
@@ -211,8 +211,8 @@ export default function ConfirmationScreen({
 
           {/* Screenshot */}
           <button onClick={handleScreenshot} className="flex flex-col items-center gap-1 text-gray-800 hover:text-[#7b1fa2] transition-colors">
-            <div className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center">
-              <Camera className="w-5 h-5" />
+            <div className="w-10 h-7 flex items-center justify-center">
+              <Scan className="w-3 h-3" />
             </div>
             <span className="text-[10px] font-semibold">Screenshot</span>
           </button>

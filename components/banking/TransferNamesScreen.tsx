@@ -149,7 +149,7 @@ export default function TransferNamesScreen({
         </div>
 
         {/* Recent Transfers List */}
-        <div className="flex flex-col gap-3 max-h-60/80 overflow-y-auto">
+        <div className="flex flex-col gap-3 flex-1 min-h-0 overflow-y-auto pr-1">
           {recentTransfers.length === 0 ? (
             <div className="text-center py-6 text-gray-400 text-sm bg-white rounded-2xl border border-dashed border-gray-200">
               No recent transfers found.
