@@ -161,7 +161,7 @@ export default function ConfirmationScreen({
           </p>
 
           {/* QR Code — dynamically generated from transaction data */}
-          <div className="flex justify-center py-2">
+          <div className="flex justify-center py-1">
             <QRCodeSVG
               value={qrPayload}
               size={150}
@@ -173,7 +173,7 @@ export default function ConfirmationScreen({
           </div>
 
           {/* CBE branding row */}
-          <div className="flex items-center gap-3 pt-3 border-t border-gray-200">
+          <div className="flex items-center gap-3 pt-1 border-t border-gray-200">
             <Image
               src="/raw icon.png"
               alt="CBE Logo"
@@ -211,7 +211,7 @@ export default function ConfirmationScreen({
 
           {/* Screenshot */}
           <button onClick={handleScreenshot} className="flex flex-col items-center gap-1 text-gray-800 hover:text-[#7b1fa2] transition-colors">
-            <div className="w-10 h-7 flex items-center justify-center">
+            <div className="w-10 h-10 flex items-center justify-center">
               <Scan className="w-3 h-3" />
             </div>
             <span className="text-[10px] font-semibold">Screenshot</span>
