@@ -323,7 +323,7 @@ export function generateReceiptHTML(data: ReceiptData): string {
           ETB ${wordsAmount}
         </div>
         <div class="ml-9">
-          <img src="/images/design-mode/Picsart_25-09-05_09-57-57-937.jpg.jpeg" alt="QR Code" class="w-24 h-24" />
+          <img src="/images/design-mode/qr.png" alt="QR Code" class="w-24 h-24" />
         </div>
       </div>
 
